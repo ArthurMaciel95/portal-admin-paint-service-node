@@ -1,6 +1,6 @@
-const { Schema }, mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-const Client = new Schema(
+const Client = new mongoose.Schema(
   {
     uuid: {
       type: String,
