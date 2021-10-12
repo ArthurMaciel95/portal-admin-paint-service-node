@@ -1,0 +1,35 @@
+{
+  "name": "service-portal-paint",
+  "version": "1.0.0",
+  "description": "API de gerenciamento de informações para o portal Paint",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js",
+    "dev": "nodemon ./bin/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurMaciel95/portal-admin-paint-service-node.git"
+  },
+  "author": "Mateus Nicolau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArthurMaciel95/portal-admin-paint-service-node/issues"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "homepage": "https://github.com/ArthurMaciel95/portal-admin-paint-service-node#readme",
+  "dependencies": {
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.10",
+    "multer": "^1.4.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
