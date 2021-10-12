@@ -5,7 +5,7 @@
 
   estrutura CLIENTE:
   
-  [
+  ``[
     {
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
