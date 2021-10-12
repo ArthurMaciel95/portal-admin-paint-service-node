@@ -20,7 +20,7 @@
       "adress":{
         "cep":"22710-244",
         "district":"Ibirapuera",
-        "additional_infomation":"perto do bar do zé"
+        "additional_infomation":"perto do bar do zé",
         "city":"São paulo"
       }
   ]
