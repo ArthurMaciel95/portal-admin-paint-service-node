@@ -8,6 +8,7 @@
   ```json 
   [
     {
+      "uuid":"5594079c-4c21-4522-a578-f3d97da2d1dc"
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
       "cpf":"15931601782",
@@ -27,6 +28,17 @@
   ```
   
 - [ ] criar endpoint de api que lista todos os clientes
-- [ ] criar endpoint que lista somente um cliente
+  GET:
+  {{url}}/api/v1/portal-admin/user/list-user
+
+- [ ] criar endpoint que mostra somente um cliente
+  GET:
+  {{url}}/api/v1/portal-admin/user/:uuid/show-user
+
 - [ ] criar endpoint que adiciona um novo cliente
+  POST:
+  {{url}}/api/v1/portal-admin/user/create-user
+
 - [ ] criar endpoint que edita as infomarções de um cliente
+  PUT:
+  {{url}}/api/v1/portal-admin/user/:uuid/edit-user
