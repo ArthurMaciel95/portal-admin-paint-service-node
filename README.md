@@ -5,7 +5,7 @@
 
   estrutura CLIENTE:
   
-  ```[
+  ```json [
     {
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
@@ -22,7 +22,7 @@
         "additional_infomation:"perto do bar do zé"
         "",
       }
-  ]```
+  ] ```
   
   
   
