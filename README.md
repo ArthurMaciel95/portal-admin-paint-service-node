@@ -22,14 +22,9 @@
         "additional_infomation:"perto do bar do zé"
         "",
       }
-  ] ```
+  ]
+  ```
   
-  
-  
-
-
-
-
 - [ ] criar endpoint de api que lista todos os clientes
 - [ ] criar endpoint que lista somente um cliente
 - [ ] criar endpoint que adiciona um novo cliente
