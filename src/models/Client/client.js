@@ -26,15 +26,25 @@ const Client = new mongoose.Schema(
       type: String,
       required: true,
     },
-    company: String,
+    company: {
+      type: String,
+    },
     photo: {
       type: Buffer,
     },
     adress: {
-      cep: String,
-      district: String,
-      additional_infomation: String,
-      city: String,
+      cep: {
+        type: String,
+      },
+      district: {
+        type: String,
+      },
+      additional_infomation: {
+        type: String,
+      },
+      city: {
+        type: String,
+      },
     },
   },
   {
