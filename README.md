@@ -29,16 +29,16 @@
   
 - [ ] criar endpoint de api que lista todos os clientes
   GET:
-  {{url}}/user/list
+  {{url}}/client/list
 
-- [ ] criar endpoint que mostra somente um cliente
+- [x] criar endpoint que mostra somente um cliente
   GET:
-  {{url}}/user/:uuid/show-user
+  {{url}}/client/:uuid/show-user
 
-- [ ] criar endpoint que adiciona um novo cliente
+- [x] criar endpoint que adiciona um novo cliente
   POST:
-  {{url}}/user/create-user
+  {{url}}/client/create-user
 
 - [ ] criar endpoint que edita as infomarções de um cliente
   PUT:
-  {{url}}/user/:uuid/edit-user
+  {{url}}/client/:uuid/edit-user
