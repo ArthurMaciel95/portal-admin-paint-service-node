@@ -8,7 +8,7 @@
   ```json 
   [
     {
-      "uuid":"5594079c-4c21-4522-a578-f3d97da2d1dc"
+      "uuid":"5594079c-4c21-4522-a578-f3d97da2d1dc",
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
       "cpf":"15931601782",
