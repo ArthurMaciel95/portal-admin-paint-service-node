@@ -29,16 +29,16 @@
   
 - [ ] criar endpoint de api que lista todos os clientes
   GET:
-  {{url}}/api/v1/portal-admin/user/list-user
+  {{url}}/user/list
 
 - [ ] criar endpoint que mostra somente um cliente
   GET:
-  {{url}}/api/v1/portal-admin/user/:uuid/show-user
+  {{url}}/user/:uuid/show-user
 
 - [ ] criar endpoint que adiciona um novo cliente
   POST:
-  {{url}}/api/v1/portal-admin/user/create-user
+  {{url}}/user/create-user
 
 - [ ] criar endpoint que edita as infomarções de um cliente
   PUT:
-  {{url}}/api/v1/portal-admin/user/:uuid/edit-user
+  {{url}}/user/:uuid/edit-user
