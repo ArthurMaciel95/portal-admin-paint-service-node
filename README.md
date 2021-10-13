@@ -6,7 +6,7 @@
   estrutura CLIENTE:
   
   ```json 
-  [
+  
     {
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
@@ -24,7 +24,7 @@
         "city":"São paulo"
       }
     }
-  ]
+  
   ```
   
   variação do 'status' : late - pending - received ( default: pending ) 
@@ -59,6 +59,19 @@
 
 
 ## Produtos
+
+```json 
+  
+    {
+      "name":"Tinta Suvinil #494942",
+      "created_at":"2021-10-11 21:49:08",
+      "updated_at":"2021-11-11 22:49:08",
+      "brand":"Suvinil cores",
+      "photo":"data:image/jpeg;base64, LzlqLzRBQ...",
+      "manufacturer":"Suvinil"
+    }
+  
+  ```
 
 - [ ] criar rota de api que insere produtos.
   <p>POST: {{address}}/product</p>
