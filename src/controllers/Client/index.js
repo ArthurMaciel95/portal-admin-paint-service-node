@@ -1,5 +1,6 @@
 module.exports = {
-  login: require('./login'),
-  register: require('./register'),
-  show: require('./show'),
+    register: require("./register"),
+    list_one: require("./list_one"),
+    list_all: require("./list_all"),
+    update : require("./update")
 };

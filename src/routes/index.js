@@ -1,3 +1,4 @@
 module.exports = {
-    "client" : require('./Client')
+    "Client": require('./Client'),
+    "Product" : require('./Product')
 }

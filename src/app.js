@@ -43,8 +43,9 @@ app.use(express.urlencoded({ extended: true }));
 /**
  * Define as rotas para toda a aplicação
  * Rotas raiz (root)
- * 
+ *
  */
-app.use("/client", rotas.client);
+app.use("/client", rotas.Client);
+app.use("/product", rotas.Product);
 
 module.exports = app;
