@@ -9,6 +9,7 @@
   
     {
       "username":"Arthur Rocha",
+      "birhdate":"1995-23-09 12:49:08"
       "email":"arthurnmrocha@gmail.com",
       "cpf":"15931601782",
       "status":"late",
