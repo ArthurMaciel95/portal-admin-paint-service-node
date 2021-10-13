@@ -79,7 +79,7 @@
 - [ ] criar endpoint que mostra só um produto
   <p>GET: {{address}}/product/:id</p>
   
-- [ ] criar rota de api que edita um produto.
+- [ ] criar rota de api que cria um produto.
   <p>PUT: {{address}}/product/:id/create</p>
 
 - [ ] criar rota de api que edita um produto.
