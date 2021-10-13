@@ -28,9 +28,9 @@
   ]
   ```
   
-  variação do 'status' : late - pending - received
+  variação do 'status' : late - pending - received ( default: pending ) 
   
-  variação do payment_method: credit - debit - money
+  variação do payment_method: credit - debit - money ( select frontend)
   
 - [ ] criar endpoint de api que lista todos os clientes
   GET:
