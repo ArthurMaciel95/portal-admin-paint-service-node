@@ -24,6 +24,7 @@
         "additional_infomation":"perto do bar do zé",
         "city":"São paulo"
       }
+    }
   ]
   ```
   
