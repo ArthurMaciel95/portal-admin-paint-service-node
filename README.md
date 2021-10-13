@@ -18,7 +18,7 @@
       "payment_method":"credit card",
       "company":"Zubilei eireli LMTD",
       "photo":"data:image/jpeg;base64, LzlqLzRBQ...",
-      "adress":{
+      "address":{
         "cep":"22710-244",
         "district":"Ibirapuera",
         "additional_infomation":"perto do bar do zé",
