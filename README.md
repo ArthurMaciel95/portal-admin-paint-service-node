@@ -47,3 +47,6 @@
 - [ ] criar endpoint que edita as infomarções de um cliente
   PUT:
   {{url}}/client/:uuid/edit-user
+  
+  
+- [ ] Utilizar JWT para autenticação
