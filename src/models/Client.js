@@ -11,8 +11,11 @@ const Client = new mongoose.Schema(
             unique: true,
             required: true,
         },
+        birthdate:{
+            type:Date
+          },
         cpf: {
-            type: String,
+            type: Number,
             unique: true,
             required: true,
         },
@@ -29,7 +32,7 @@ const Client = new mongoose.Schema(
             type: Buffer,
         },
         adress: {
-            cep: String,
+            cep: Number,
             district: String,
             additional_infomation: String,
             city: String,
@@ -40,4 +43,4 @@ const Client = new mongoose.Schema(
     }
 );
 
-module.exports = mongoose.model("users", Client);
+module.exports = mongoose.model("client", Client);
