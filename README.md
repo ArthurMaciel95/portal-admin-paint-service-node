@@ -64,6 +64,7 @@
   
     {
       "name":"Tinta Suvinil #494942",
+      "price":4000,
       "created_at":"2021-10-11 21:49:08",
       "updated_at":"2021-11-11 22:49:08",
       "brand":"Suvinil cores",
@@ -74,13 +75,13 @@
   ```
 
 - [ ] criar rota de api que insere produtos.
-  <p>POST: {{address}}/product</p>
+  <p>POST: {{address}}/product/create</p>
   
-- [ ] criar endpoint que mostra só um produto
+- [ ] criar rota de api que mostra só um produto
   <p>GET: {{address}}/product/:id</p>
   
-- [ ] criar rota de api que cria um produto.
-  <p>PUT: {{address}}/product/:id/create</p>
+- [ ] criar rota de api que deleta um produto.
+  <p>DELETE: {{address}}/product/:id/delete</p>
 
 - [ ] criar rota de api que edita um produto.
   <p>PUT: {{address}}/product/:id/edit</p>
