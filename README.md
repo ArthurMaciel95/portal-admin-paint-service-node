@@ -34,19 +34,37 @@
   
 - [ ] criar endpoint de api que lista todos os clientes
   GET:
-  {{url}}/client/list
+  {{address}}/client/list
 
 - [x] criar endpoint que mostra somente um cliente
   GET:
-  {{url}}/client/:uuid/show-user
+  {{address}}/client/:uuid/show-user
 
 - [x] criar endpoint que adiciona um novo cliente
   POST:
-  {{url}}/client/create-user
+  {{address}}/client/create-user
 
 - [ ] criar endpoint que edita as infomarções de um cliente
   PUT:
-  {{url}}/client/:uuid/edit-user
+  {{address}}/client/:uuid/edit-user
   
+- [ ] criar endpoint que lista produtos comprados de um cliente
+  GET:
+  {{address}}/client/products
+  
+  
+- [ ] criar endpoint que mostra só um produto
+  GET:
+  {{address}}/client/product/:id
   
 - [ ] Utilizar JWT para autenticação
+
+
+
+## Produtos
+
+- [ ] criar rota de api que insere produtos
+- [ ] criar rota de api que lista produtos
+- [ ] criar rota de api que mostra so um produto
+- [ ] criar
+
