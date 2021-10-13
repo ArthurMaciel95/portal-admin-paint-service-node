@@ -12,7 +12,7 @@
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
       "cpf":"15931601782",
-      "status":"late",
+      "status":"late", // pending - received
       "created_at":"2021-10-11 21:49:08",
       "updated_at":"2021-11-11 22:49:08",
       "payment_method":"credit card",
