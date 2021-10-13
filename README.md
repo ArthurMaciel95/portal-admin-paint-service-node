@@ -31,13 +31,13 @@
   
   variação do payment_method: credit - debit - money ( select frontend)
   
-- [ ] criar endpoint de api que lista todos os clientes
+- [x] criar endpoint de api que lista todos os clientes
   
   <p>GET: {{address}}/client/list</p>
 
 - [x] criar endpoint que mostra somente um cliente
   
-  <p>GET: {{address}}/client/:id/show-user</p>
+  <p>GET: {{address}}/client/list/:id</p>
 
 - [x] criar endpoint que adiciona um novo cliente
   
@@ -45,11 +45,11 @@
 
 - [ ] criar endpoint que edita as infomarções de um cliente
   
-  <p>PUT: {{address}}/client/:id/edit</p>
+  <p>PUT: {{address}}/client/edit/:id</p>
   
 - [ ] criar endpoint que lista produtos comprados de um cliente
   
-  <p>GET: {{address}}/client/products</p>
+  <p>GET: {{address}}/client/products/:id</p>
   
   
 
@@ -81,7 +81,7 @@
   <p>GET: {{address}}/product/:id</p>
   
 - [ ] criar rota de api que deleta um produto.
-  <p>DELETE: {{address}}/product/:id/delete</p>
+  <p>DELETE: {{address}}/product/delete/:id</p>
 
 - [ ] criar rota de api que edita um produto.
-  <p>PUT: {{address}}/product/:id/edit</p>
+  <p>PUT: {{address}}/product/edit/:id</p>
