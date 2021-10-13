@@ -9,6 +9,6 @@ const controller = require('../controllers/Client');
  */
 rotas.get('/access', controller.login);
 rotas.post('/register', controller.register);
-rotas.get('/:uuid/show', controller.show);
+rotas.get('/:id/show', controller.show);
 
 module.exports = rotas;

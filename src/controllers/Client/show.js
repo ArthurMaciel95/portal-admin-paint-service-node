@@ -2,9 +2,9 @@ const User = require('../../models/Client/client');
 
 module.exports = async (req, res) => {
   try {
-    const uuid = req.params.uuid;
+    const id = req.params.id;
 
-    const user = await User.findOne({ uuid });
+    const user = await User.findOne({ _id:id });
 
     if (!user) {
       res.json({
