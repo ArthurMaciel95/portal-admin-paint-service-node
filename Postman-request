@@ -1,36 +1,52 @@
 {
-  "info": {
-    "_postman_id": "ef22a259-03f8-4f0d-9e2b-0f776c170afa",
-    "name": "Paint",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Client",
-      "item": [
-        {
-          "name": "Access",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": null
-          },
-          "response": []
-        },
-        {
-          "name": "Register",
-          "request": {
-            "method": "POST",
-            "header": [],
-            "url": {
-              "raw": "{{address}}/client/register",
-              "host": ["{{address}}"],
-              "path": ["client", "register"]
-            }
-          },
-          "response": []
-        }
-      ]
-    }
-  ]
+	"info": {
+		"_postman_id": "b09908ab-4f0e-4310-a437-cc53ffff6d71",
+		"name": "Paint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Access",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/client/register",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		}
+	]
 }
