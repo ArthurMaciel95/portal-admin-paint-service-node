@@ -8,7 +8,6 @@
   ```json 
   [
     {
-      "uuid":"5594079c-4c21-4522-a578-f3d97da2d1dc",
       "username":"Arthur Rocha",
       "email":"arthurnmrocha@gmail.com",
       "cpf":"15931601782",
@@ -33,29 +32,27 @@
   variação do payment_method: credit - debit - money ( select frontend)
   
 - [ ] criar endpoint de api que lista todos os clientes
-  GET:
-  {{address}}/client/list
+  
+  <p>GET: {{address}}/client/list</p>
 
 - [x] criar endpoint que mostra somente um cliente
-  GET:
-  {{address}}/client/:uuid/show-user
+  
+  <p>GET: {{address}}/client/:id/show-user</p>
 
 - [x] criar endpoint que adiciona um novo cliente
-  POST:
-  {{address}}/client/create-user
+  
+  <p>POST: {{address}}/client/create</p>
 
 - [ ] criar endpoint que edita as infomarções de um cliente
-  PUT:
-  {{address}}/client/:uuid/edit-user
+  
+  <p>PUT: {{address}}/client/:id/edit</p>
   
 - [ ] criar endpoint que lista produtos comprados de um cliente
-  GET:
-  {{address}}/client/products
+  
+  <p>GET: {{address}}/client/products</p>
   
   
-- [ ] criar endpoint que mostra só um produto
-  GET:
-  {{address}}/client/product/:id
+
   
 - [ ] Utilizar JWT para autenticação
 
@@ -63,8 +60,14 @@
 
 ## Produtos
 
-- [ ] criar rota de api que insere produtos
-- [ ] criar rota de api que lista produtos
-- [ ] criar rota de api que mostra so um produto
-- [ ] criar
+- [ ] criar rota de api que insere produtos.
+  <p>POST: {{address}}/product</p>
+  
+- [ ] criar endpoint que mostra só um produto
+  <p>GET: {{address}}/product/:id</p>
+  
+- [ ] criar rota de api que edita um produto.
+  <p>PUT: {{address}}/product/:id/create</p>
 
+- [ ] criar rota de api que edita um produto.
+  <p>PUT: {{address}}/product/:id/edit</p>
