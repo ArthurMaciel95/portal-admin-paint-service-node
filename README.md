@@ -92,3 +92,23 @@
 
 - [ ] criar rota de api que edita um produto.
   <p>PUT: {{address}}/product/edit/:id</p>
+  
+  
+  
+  
+  ## Usuários
+  
+  
+  
+```json 
+  
+    {
+      "name":"Paulo dos santons",
+      "email":"paulodossantos@gmail.com",
+      "created_at":"2021-10-11 21:49:08",
+      "updated_at":"2021-11-11 22:49:08",
+      "password":"$2a$12$g0QfdhJQqHq3pgbH5Dsgg.XHUWCjNAbN2rnsFPrrTglIo6hlf1h7G$2a$12$g0QfdhJQqHq3pgbH5Dsgg.XHUWCjNAbN2rnsFPrrTglIo6hlf1h7G",
+      "password_hash":"$2a$12$g0QfdhJQqHq3pgbH5Dsgg",
+    }
+  
+  ```
