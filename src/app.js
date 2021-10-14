@@ -47,5 +47,6 @@ app.use(express.urlencoded({ extended: true }));
  */
 app.use("/client", rotas.Client);
 app.use("/product", rotas.Product);
+app.use("/user",rotas.User)
 
 module.exports = app;
