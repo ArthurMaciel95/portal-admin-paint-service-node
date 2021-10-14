@@ -22,7 +22,10 @@ const Product = new mongoose.Schema(
   },
   {
     timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
+    autoIndex:false
   },
 );
+
+
 
 module.exports = mongoose.model('products', Product);

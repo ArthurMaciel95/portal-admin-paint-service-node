@@ -14,6 +14,9 @@ module.exports = async (req,res) => {
         if(!isNaN(password)){
             throw { message: 'password need to be string'}
         }
+        if(value.isNull(password)){
+            throw { message : 'password cannot be null'}
+        }
 
         if(value.isNull(emailBody)){
             throw { message: 'email cannot be empty'}
@@ -22,6 +25,11 @@ module.exports = async (req,res) => {
         if(!email.isEmail(emailBody)){
             throw { message: 'email is not valid'}
         }
+
+        if(await User.findOne({email:emailBody})){
+            throw { message: 'email already exist'}
+        }
+
         const salt = await bcryptjs.genSalt()
         const passwordCrypt = await bcryptjs.hash(password,salt,)
 

@@ -40,6 +40,7 @@ const Client = new mongoose.Schema(
     },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
+        autoIndex:false
     }
 );
 
