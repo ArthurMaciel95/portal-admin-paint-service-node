@@ -1,19 +1,32 @@
-const { sendError,value } = require("../../functions");
+const { sendError, value } = require("../../functions");
 const { Product } = require("../../models");
 
 module.exports = async (req, res) => {
     try {
-        const { id } = req.params;
-        //nao esta funcionando 
-        if(value.isNull(id)){
-            throw{ message: "params not declare" }
-        }
+        /**
+         * Verifica se o parametro id esta sendo recebido.
+         *
+         */
+        if (!req.params.id)
+            throw { message: "It is necessary to inform the product code" };
 
-        const product = await Product.findByIdAndUpdate({_id:id}, req.body)
+        /**
+         * Faz a busca no banco de dados por ID e atualiza.
+         * Valida o retorno e retorna para a requisição.
+         *
+         */
+        req.body.updated_at = new Date()
+        const product = await Product.findByIdAndUpdate(
+            { _id: req.params.id },
+            req.body
+        );
 
-        if(value.isNull(product)){
-            throw { message: "product not found"}
-        }
+        if (value.isNull(product)) throw { message: "product not found" };
+
+        res.status(200).send({
+            status: true,
+            message: "Updated product",
+        });
 
     } catch (erro) {
         sendError(res, erro);

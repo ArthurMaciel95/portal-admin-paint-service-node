@@ -33,7 +33,7 @@ module.exports = {
      * @param { Object } obj objeto a ser verificado
      * @returns { Exception } Exception Error para vazio
      */
-    paramsNull(obj) {
+    attributeIsNull(obj) {
         if (this.isNull(obj)) { throw { message : "É necessario informar os dados"} }
         for (var param in obj) {
             if (this.isNull(obj[param])) {

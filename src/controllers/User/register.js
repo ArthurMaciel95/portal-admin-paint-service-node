@@ -1,47 +1,51 @@
-const { User } = require('../../models')
-const { sendError, value, email, toCompare } = require('../../functions')
-const bcryptjs = require('bcryptjs')
+const { User } = require("../../models");
+const { sendError, value, Email, toCompare } = require("../../functions");
+const bcryptjs = require("bcryptjs");
+
+module.exports = async (req, res) => {
+    try {
+
+        /**
+         * Faz a comparação com o que é necessario com os que estão sendo enviados.
+         * Verifica se os atributos então preencidos e não nulos.
+         * 
+         */
+        toCompare.keys(["username", "email", "password"], req.body);
+        value.attributeIsNull(req.body);
+
+        /**
+         * Verifica o formato do Email.
+         * Busca por um usuario Já cadastrado no sistema.
+         * 
+         */
+        if (!Email.isEmail(req.body.email))
+            throw { message: "email is not valid" };
+        if (await User.findOne({ email: req.body.email }))
+            throw { message: "email already exist" };
+
+        /**
+         *  Gera o mecanismo para encriptção.
+         *  Criptografa a senha e cria um atributo de retorno.
+         * 
+         */
+        const salt = await bcryptjs.genSalt();
+        req.body.password = await bcryptjs.hash(req.body.password, salt);
+        req.body.password_hash = salt;
+
+        /**
+         * Cria um novo Usuário.
+         * E retorna os dados para a requisição.
+         * 
+         */
+        const user = await User.create(req.body);
 
 
-module.exports = async (req,res) => {   
-    try{
-
-        toCompare.keys(['username','email','password'],req.body,true)
-
-        const emailBody = req.body.email
-        const {password} = req.body
-
-        if(!isNaN(password)){
-            throw { message: 'password need to be string'}
-        }
-        if(value.isNull(password)){
-            throw { message : 'password cannot be null'}
-        }
-
-        if(value.isNull(emailBody)){
-            throw { message: 'email cannot be empty'}
-        }
-
-        if(!email.isEmail(emailBody)){
-            throw { message: 'email is not valid'}
-        }
-
-        if(await User.findOne({email:emailBody})){
-            throw { message: 'email already exist'}
-        }
-
-        const salt = await bcryptjs.genSalt()
-        const passwordCrypt = await bcryptjs.hash(password,salt,)
-
-        req.body.password = passwordCrypt
-        req.body.password_hash = salt
-        console.log(req.body)
-        const user = await User.create(req.body)
-        res.status(201).json({
-            status:true,
-            user
-        })
-    }catch(erro){
+        res.status(200).json({
+            status: true,
+            user,
+        });
+        
+    } catch (erro) {
         sendError(res, erro);
     }
-}
+};
