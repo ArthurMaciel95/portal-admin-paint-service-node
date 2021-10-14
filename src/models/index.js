@@ -1,4 +1,5 @@
 module.exports = {
   "Client": require('./Client'),
-  "Product" : require('./Product')
+  "Product" : require('./Product'),
+  "User":require('./User')
 };
