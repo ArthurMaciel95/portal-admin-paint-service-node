@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ef22a259-03f8-4f0d-9e2b-0f776c170afa",
+		"_postman_id": "9af19d9d-dd6b-46f8-842a-19f386cade69",
 		"name": "Paint",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"Cliente CHato\",\r\n    \"email\" : \"clientechato@gmail.com\",\r\n    \"cpf\" : 12332456789,\r\n    \"payment_method\" : \"money\",\r\n    \"adress\" : {\r\n        \"cep\" : 371303400,\r\n        \"district\" : \"LAPÁ\",\r\n        \"additional_infomation\" : \"Fribra de heroi\",\r\n        \"city\" : \"Niteroi\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"username\" : \"felipe santos\",\r\n    \"email\" : \"felipesanto@gmail.com\",\r\n    \"cpf\" : \"15931601783\",\r\n    \"payment_method\" : \"money\",\r\n    \"adress\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"jacarepaguá\",\r\n        \"additional_infomation\" : \"rei das tintas\",\r\n        \"city\" : \"Curicica\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -82,6 +82,15 @@
 					"request": {
 						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"tinta pra cabelo 100ml\",\n    \"price\":4453,\n    \"brand\":\"marca generica\",\n    \"photo\":\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\n    \"manufacturer\":\"marca generica\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{address}}/product/create",
 							"host": [
@@ -119,15 +128,30 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Balde de tinta 10 litros\",\n    \"price\":3021,\n    \"brand\":\"marca generica\",\n    \"photo\":\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\n    \"manufacturer\":\"marca generica\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{address}}/product/update/<ID>",
+							"raw": "{{address}}/product/update/:id",
 							"host": [
 								"{{address}}"
 							],
 							"path": [
 								"product",
 								"update",
-								"<ID>"
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61672f6629442fbc3c6f5297"
+								}
 							]
 						}
 					},
@@ -139,14 +163,20 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{address}}/product/list/<ID>",
+							"raw": "{{address}}/product/list/:id",
 							"host": [
 								"{{address}}"
 							],
 							"path": [
 								"product",
 								"list",
-								"<ID>"
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "61672f6629442fbc3c6f5297"
+								}
 							]
 						}
 					},
@@ -165,6 +195,38 @@
 							"path": [
 								"product",
 								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n      \"username\":\"jubileidoagreste\",\n      \"email\":\"picademel@gmail.com\",\n      \"password\":\"tiacreuza123\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/user/register",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"user",
+								"register"
 							]
 						}
 					},
