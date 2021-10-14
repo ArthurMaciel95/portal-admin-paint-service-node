@@ -81,10 +81,10 @@
   
   ```
 
-- [ ] criar rota de api que insere produtos.
+- [x] criar rota de api que insere produtos.
   <p>POST: {{address}}/product/create</p>
   
-- [ ] criar rota de api que mostra só um produto
+- [x] criar rota de api que mostra só um produto
   <p>GET: {{address}}/product/:id</p>
   
 - [ ] criar rota de api que deleta um produto.
@@ -112,3 +112,32 @@
     }
   
   ```
+  
+  ### register
+  
+  
+- [ ] criar rota de api que cadastra um novo USER.
+  <p>POST: {{address}}/user/register</p>
+  
+- [ ] VERIFICAR SE OS DADOS ENVIADOS BATEM COM QUE É ESPERADO.
+- [ ] VERIFICAR SE EMAIL JÁ E CADASTRADO
+- [ ] VERIFICAR SE SENHA ATENDE OS REQUISITOS 
+  <p>password >= 6</p>
+  <p>password >= 1 caracteres especiais</p>
+  <p>password >= 1 letra maiscula</p>
+  
+  ### login:
+  
+- [ ] criar rota de api que edita um produto.
+  <p>POST: {{address}}/user/login</p>
+  
+  validação:
+  
+- [ ] VERIFICAR SE O EMAIL EXISTE
+- [ ] VERIFICAR SE OS DADOS ENVIADOS BATEM COM QUE É ESPERADO.
+- [ ] VERIFICAR SE A SENHA E A MESMA DO BD.
+  
+  
+  
+  
+  
