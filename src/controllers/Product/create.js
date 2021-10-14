@@ -1,4 +1,4 @@
-const { sendError,toCompare, value, } = require("../../functions");
+const { sendError,toCompare, value} = require("../../functions");
 const { Product } = require("../../models");
 module.exports = async (req, res) => {
     try {
@@ -8,6 +8,7 @@ module.exports = async (req, res) => {
             req.body,
             false
         )
+        value.hasCharSpacial(req.body.name)
 
         if(!value.isNull(await Product.findOne({name: req.body.name}))){
             throw { message: "Product already registered"};
