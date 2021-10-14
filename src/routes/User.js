@@ -11,6 +11,8 @@ const controller = require('../controllers/User')
 // Rota para criar um novo produto
 rotas.post("/register", controller.register);
 
+rotas.post('/login', controller.login)
+
 
 
 module.exports = rotas;
