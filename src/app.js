@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 const rotas = require("./routes");
+const { jwt } = require("./functions");
 
 /**
  * Faz a coneção com o banco de dados.
@@ -45,8 +46,8 @@ app.use(express.urlencoded({ extended: true }));
  * Rotas raiz (root)
  *
  */
-app.use("/client", rotas.Client);
-app.use("/product", rotas.Product);
-app.use("/user",rotas.User)
+app.use("/client", jwt.verify, rotas.Client);
+app.use("/product", jwt.verify, rotas.Product);
+app.use("/user", rotas.User);
 
 module.exports = app;

@@ -247,6 +247,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Access",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Mateus Nicolau\",\r\n    \"email\" : \"nicolau@gmail.com\",\r\n    \"password\" : \"niconico\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/user/access/",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"user",
+								"access",
+								""
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
