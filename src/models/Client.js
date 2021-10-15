@@ -11,9 +11,9 @@ const Client = new mongoose.Schema(
             unique: true,
             required: true,
         },
-        birthdate:{
-            type:Date
-          },
+        birth_date: {
+            type: Date,
+        },
         cpf: {
             type: Number,
             unique: true,
@@ -31,7 +31,7 @@ const Client = new mongoose.Schema(
         photo: {
             type: Buffer,
         },
-        adress: {
+        address: {
             cep: Number,
             district: String,
             additional_infomation: String,
@@ -40,7 +40,7 @@ const Client = new mongoose.Schema(
     },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
-        autoIndex:false
+        autoIndex: false,
     }
 );
 

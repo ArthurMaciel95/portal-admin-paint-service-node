@@ -1,4 +1,4 @@
-const { value, email, sendError, toCompare } = require("../../functions");
+const { value, Email, sendError, toCompare } = require("../../functions");
 const { Client } = require("../../models");
 
 module.exports = async (req, res) => {
@@ -10,35 +10,55 @@ module.exports = async (req, res) => {
          *
          */
         toCompare.keys(
-            ["username", "email", "cpf", "payment_method", "adress"],
+            [
+                "username",
+                "email",
+                "cpf",
+                "payment_method",
+                "address",
+                "birth_date",
+                "company",
+            ],
             req.body,
             false // trava de segurança desativado
         );
 
         toCompare.keys(
             ["cep", "district", "additional_infomation", "city"],
-            req.body.adress,
+            req.body.address,
             true // trava de segurança ativada
         );
+        
+        /**
+         * Faz a validação da String.
+         * Verifica se há algum tipo de caracter especial.
+         * 
+         */
+        value.hasCharSpacial(req.body.username)
+        value.hasCharSpacial(req.body.company)
+        value.hasCharSpacial(req.body.address.district)
+        value.hasCharSpacial(req.body.address.additional_infomation);
 
         /**
          * Faz uma verificação no formato do email.
          * Se estiver fora do padrão é lançado um erro na pilha.
          *
          */
-        email.isEmail(req.body.email);
+        Email.isEmail(req.body.email);
 
         /**
          * Verifica se há algum email e um CPF já cadastrado.
          * Se tiver retornar um erro. mas se não, cria um novo cliente.
          *
          */
-        if (!value.isNull(await Client.findOne({ email: req.body.email }))) {
-            throw { message: "Email already registered" };
+        const foc = await Client.findOne({$or: [{ cpf: req.body.cpf }, { email: req.body.email }]})
+        if (!value.isNull(foc)) {
+            if (foc.email === req.body.email)
+                throw { message: "Email already registered" };
+            if (foc.password === req.body.password)
+                throw {message:"Registration of a physical person (CPF) already registered"};
         }
-        if (!value.isNull(await Client.findOne({ cpf: req.body.cpf }))) {
-            throw { message: "Your identity is already registered (CPF)" };
-        }
+        
         /**
          * Cria um novo usuario com base nas informaçoes passadas.
          * E retornar para a requição as informaçoes.

@@ -11,11 +11,13 @@ const controller = require("../controllers/Client");
 // Rota para criar um novo cliente no sistema
 rotas.post("/create", controller.register);
 
-// Rota para listar um cliente especifico
+// Rota para listar um cliente 
 rotas.get("/list/:id", controller.list_one);
 
 // Rota para listar todos os clientes
 rotas.get("/list", controller.list_all);
 
+// Rota para atualizar um cliente
+rotas.put("/update/:id", controller.update)
 
 module.exports = rotas;

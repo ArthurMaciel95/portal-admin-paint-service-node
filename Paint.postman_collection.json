@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9af19d9d-dd6b-46f8-842a-19f386cade69",
+		"_postman_id": "b57c1d16-b6a0-4370-9494-cf8a781d90cb",
 		"name": "Paint",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"felipe santos\",\r\n    \"email\" : \"felipesanto@gmail.com\",\r\n    \"cpf\" : \"15931601783\",\r\n    \"payment_method\" : \"money\",\r\n    \"adress\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"jacarepaguá\",\r\n        \"additional_infomation\" : \"rei das tintas\",\r\n        \"city\" : \"Curicica\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"username\" : \"Mateus Nicolau\",\r\n    \"email\" : \"mateusnicolau@gmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"money\",\r\n    \"birth_date\" : \"\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"Do lado da casa de swing\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -71,6 +71,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Mateus Nicolau Gomes\",\r\n    \"email\" : \"mateusnicolaugmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"money\",\r\n    \"status\" : \"pending\",\r\n    \"company\" : \"Devjr\",\r\n    \"birth_date\" : \"2021-10-14T18:17:02.121+00:00\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"Do lado da casa de swing\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/client/update/6168741ec397c0c36f2ffd96",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"update",
+								"6168741ec397c0c36f2ffd96"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -84,7 +112,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"tinta pra cabelo 100ml\",\n    \"price\":4453,\n    \"brand\":\"marca generica\",\n    \"photo\":\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\n    \"manufacturer\":\"marca generica\"\n}",
+							"raw": "{\n    \"name\":\"Tinta oléo verde 3400ml\",\n    \"price\":4556,\n    \"brand\":\"CardPaint\",\n    \"photo\":\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\n    \"manufacturer\":\"marca generica\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -110,14 +138,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{address}}/product/delete/<ID>",
+							"raw": "{{address}}/product/delete/61687afac779dfe692dc6894",
 							"host": [
 								"{{address}}"
 							],
 							"path": [
 								"product",
 								"delete",
-								"<ID>"
+								"61687afac779dfe692dc6894"
 							]
 						}
 					},
@@ -138,20 +166,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{address}}/product/update/:id",
+							"raw": "{{address}}/product/update/616881c7c8eee47c390d039b",
 							"host": [
 								"{{address}}"
 							],
 							"path": [
 								"product",
 								"update",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "61672f6629442fbc3c6f5297"
-								}
+								"616881c7c8eee47c390d039b"
 							]
 						}
 					},
@@ -163,20 +185,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{address}}/product/list/:id",
+							"raw": "{{address}}/product/list/616881c7c8eee47c390d039b",
 							"host": [
 								"{{address}}"
 							],
 							"path": [
 								"product",
 								"list",
-								":id"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "61672f6629442fbc3c6f5297"
-								}
+								"616881c7c8eee47c390d039b"
 							]
 						}
 					},
