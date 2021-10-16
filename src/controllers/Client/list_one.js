@@ -1,5 +1,6 @@
 const { Client } = require("../../models");
-const { value, sendError } = require('../../functions')
+const { value } = require("client-management-attributes")
+const { sendError } = require('../../functions')
 
 module.exports = async (req, res) => {
     try {

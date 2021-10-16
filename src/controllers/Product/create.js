@@ -1,5 +1,8 @@
-const { sendError, toCompare, value } = require("../../functions");
+const { toCompare, value } = require("client-management-attributes");
+const { sendError } = require("../../functions");
+
 const { Product } = require("../../models");
+
 module.exports = async (req, res) => {
     try {
         /**

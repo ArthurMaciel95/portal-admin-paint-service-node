@@ -1,4 +1,6 @@
-const { sendError, value } = require("../../functions");
+const { value } = require("client-management-attributes");
+const { sendError } = require("../../functions");
+
 const { Product } = require("../../models");
 
 module.exports = async (req, res) => {
@@ -15,7 +17,7 @@ module.exports = async (req, res) => {
          * Valida o retorno e retorna para a requisição.
          *
          */
-        req.body.updated_at = new Date()
+        req.body.updated_at = new Date();
         const product = await Product.findByIdAndUpdate(
             { _id: req.params.id },
             req.body
@@ -27,7 +29,6 @@ module.exports = async (req, res) => {
             status: true,
             message: "Updated product",
         });
-
     } catch (erro) {
         sendError(res, erro);
     }

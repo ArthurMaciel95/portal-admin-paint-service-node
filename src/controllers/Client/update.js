@@ -1,4 +1,5 @@
-const { sendError, value, Email, toCompare } = require("../../functions");
+const { value, attributes, toCompare } = require("client-management-attributes");
+const { sendError } = require("../../functions")
 const { Client } = require("../../models");
 
 module.exports = async (req, res) => {
@@ -51,7 +52,7 @@ module.exports = async (req, res) => {
         if (value.isNull(req.params.id))
             throw { message: "params id not declare" };
 
-        Email.isEmail(req.body.email);
+        attributes.isEmail(req.body.email);
 
         /**
          * Faz a atualização com base no ID.

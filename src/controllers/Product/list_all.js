@@ -1,4 +1,5 @@
-const { sendError, value } = require("../../functions");
+const { value } = require("client-management-attributes");
+const { sendError } = require("../../functions");
 const { Product } = require("../../models");
 
 module.exports = async (req, res) => {
