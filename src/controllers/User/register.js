@@ -1,5 +1,8 @@
 const { User } = require("../../models");
-const { sendError, value, Email, toCompare } = require("../../functions");
+
+const { value, attributes, toCompare } = require("client-management-attributes")
+const { sendError } = require("../../functions");
+
 const bcryptjs = require("bcryptjs");
 
 module.exports = async (req, res) => {
@@ -18,7 +21,7 @@ module.exports = async (req, res) => {
          * Busca por um usuario Já cadastrado no sistema.
          * 
          */
-        if (!Email.isEmail(req.body.email))
+        if (!attributes.isEmail(req.body.email))
             throw { message: "email is not valid" };
         if (await User.findOne({ email: req.body.email }))
             throw { message: "email already exist" };

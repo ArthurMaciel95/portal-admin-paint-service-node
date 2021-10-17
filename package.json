@@ -22,7 +22,7 @@
   "homepage": "https://github.com/ArthurMaciel95/portal-admin-paint-service-node#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
+    "client-management-attributes": "^1.0.2",
     "debug": "^4.3.2",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",

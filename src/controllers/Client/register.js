@@ -1,4 +1,5 @@
-const { value, Email, sendError, toCompare } = require("../../functions");
+const { value, attributes, toCompare } = require("client-management-attributes");
+const { sendError } = require("../../functions")
 const { Client } = require("../../models");
 
 module.exports = async (req, res) => {
@@ -30,6 +31,13 @@ module.exports = async (req, res) => {
         );
         
         /**
+         * Faz a verificação se há algum parametro vazio.
+         * 
+         */
+        value.attributeIsNull(req.body)
+        value.attributeIsNull(req.body.address)
+
+        /**
          * Faz a validação da String.
          * Verifica se há algum tipo de caracter especial.
          * 
@@ -44,7 +52,7 @@ module.exports = async (req, res) => {
          * Se estiver fora do padrão é lançado um erro na pilha.
          *
          */
-        Email.isEmail(req.body.email);
+        attributes.isEmail(req.body.email);
 
         /**
          * Verifica se há algum email e um CPF já cadastrado.

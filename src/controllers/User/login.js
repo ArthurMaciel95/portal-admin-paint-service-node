@@ -1,6 +1,9 @@
 require('dotenv').config()
 const { User } = require("../../models");
-const { sendError, value, Email, toCompare, jwt } = require("../../functions");
+
+const { value, attributes, toCompare } = require("client-management-attributes")
+const { sendError, jwt } = require("../../functions");
+
 const bcryptjs = require("bcryptjs");
 
 module.exports = async (req, res) => {
@@ -21,7 +24,7 @@ module.exports = async (req, res) => {
          * Verifica se o Email tem um formato padrão.
          *
          */
-        Email.isEmail(req.body.email);
+        attributes.isEmail(req.body.email);
 
         if (!isNaN(req.body.password))
             throw { message: "password need to be string" };
