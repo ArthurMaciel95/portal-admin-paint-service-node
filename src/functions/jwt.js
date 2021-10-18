@@ -11,7 +11,7 @@ function getToken(req) {
     if (req.headers["x-access-token"]) {
         return req.headers["x-access-token"];
     } else if (req.headers["authorization"]) {
-        return req.headers["authorization"].toString().replace("Bearer ", "");
+        return req.headers["authorization"].toString().replace("Bearer ", "").trim();
     } else {
         throw {
             code: 401,
