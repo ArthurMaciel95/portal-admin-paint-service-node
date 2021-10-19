@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b57c1d16-b6a0-4370-9494-cf8a781d90cb",
+		"_postman_id": "d38bc8cd-d0d9-46f4-89da-30279f17209c",
 		"name": "Paint",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,11 +11,21 @@
 				{
 					"name": "Create",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"Mateus Nicolau\",\r\n    \"email\" : \"mateusnicolau@gmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"money\",\r\n    \"birth_date\" : \"\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"Do lado da casa de swing\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"username\" : \"Arthur Nogueira\",\r\n    \"email\" : \"arthunmrocha@gmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"credit\",\r\n    \"birth_date\" : \"23/09/1995\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"aoaodifapsdifap\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n    \"company\":\"arthur desenvolvedor web\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -38,6 +48,16 @@
 				{
 					"name": "List All",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -56,6 +76,16 @@
 				{
 					"name": "List One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -95,6 +125,40 @@
 								"client",
 								"update",
 								"6168741ec397c0c36f2ffd96"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/client/search?search=arthur",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "arthur"
+								}
 							]
 						}
 					},
@@ -255,7 +319,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"Mateus Nicolau\",\r\n    \"email\" : \"nicolau@gmail.com\",\r\n    \"password\" : \"niconico\"\r\n}",
+							"raw": " {\r\n      \"username\":\"jubileidoagreste\",\r\n      \"email\":\"picademel@gmail.com\",\r\n      \"password\":\"tiacreuza123\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
