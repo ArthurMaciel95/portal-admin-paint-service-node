@@ -1,26 +1,18 @@
 require("dotenv").config();
-
+const database = require('./database')
 const express = require("express");
-const mongoose = require("mongoose");
+
 
 const app = express();
 const cors = require('cors')
 const rotas = require("./routes");
 const { jwt } = require("./functions");
 
-/**
- * Faz a coneção com o banco de dados.
- * Utiliza do framework mongoose para realizar tal ação.
- *
- */
-mongoose.connect(
-    process.env.DB_URL.replace("<username>", process.env.DB_USER)
-        .replace("<password>", process.env.DB_PASS)
-        .replace("<database>", process.env.DB_COLLETION),
-    {
-        useNewUrlParser: true,
-    }
-);
+database.then(() => {
+    console.log('===> BANCO DE DADOS CONECTADO! <===')
+}).catch(e => {
+    console.log(e)
+})
 
 /**
  *  Define a acessibilidade da aplição.
