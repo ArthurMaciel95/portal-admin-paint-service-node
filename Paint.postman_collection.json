@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "d38bc8cd-d0d9-46f4-89da-30279f17209c",
+		"name": "Paint",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Arthur Nogueira\",\r\n    \"email\" : \"arthunmrocha@gmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"credit\",\r\n    \"birth_date\" : \"23/09/1995\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"aoaodifapsdifap\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n    \"company\":\"arthur desenvolvedor web\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/client/create",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/client/list",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List One",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/client/list/4343",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"list",
+								"4343"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"Mateus Nicolau Gomes\",\r\n    \"email\" : \"mateusnicolaugmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"money\",\r\n    \"status\" : \"pending\",\r\n    \"company\" : \"Devjr\",\r\n    \"birth_date\" : \"2021-10-14T18:17:02.121+00:00\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"Do lado da casa de swing\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/client/update/6168741ec397c0c36f2ffd96",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"update",
+								"6168741ec397c0c36f2ffd96"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/client/search?search=arthur",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"client",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "arthur"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Tinta oléo verde 3400ml\",\n    \"price\":4556,\n    \"brand\":\"CardPaint\",\n    \"photo\":\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\n    \"manufacturer\":\"marca generica\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/product/create",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/product/delete/61687afac779dfe692dc6894",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"product",
+								"delete",
+								"61687afac779dfe692dc6894"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Balde de tinta 10 litros\",\n    \"price\":3021,\n    \"brand\":\"marca generica\",\n    \"photo\":\"data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\n    \"manufacturer\":\"marca generica\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/product/update/616881c7c8eee47c390d039b",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"product",
+								"update",
+								"616881c7c8eee47c390d039b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List One",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/product/list/616881c7c8eee47c390d039b",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"product",
+								"list",
+								"616881c7c8eee47c390d039b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{address}}/product/list",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"product",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n      \"username\":\"jubileidoagreste\",\n      \"email\":\"picademel@gmail.com\",\n      \"password\":\"tiacreuza123\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/user/register",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Access",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n      \"username\":\"jubileidoagreste\",\r\n      \"email\":\"picademel@gmail.com\",\r\n      \"password\":\"tiacreuza123\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{address}}/user/access/",
+							"host": [
+								"{{address}}"
+							],
+							"path": [
+								"user",
+								"access",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
