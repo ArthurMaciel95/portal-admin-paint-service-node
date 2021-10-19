@@ -51,4 +51,7 @@ app.use("/client", jwt.verify, rotas.Client);
 app.use("/product", jwt.verify, rotas.Product);
 app.use("/user", rotas.User);
 
+
+
+
 module.exports = app;

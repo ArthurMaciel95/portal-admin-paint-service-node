@@ -20,4 +20,6 @@ rotas.get("/list", controller.list_all);
 // Rota para atualizar um cliente
 rotas.put("/update/:id", controller.update)
 
+rotas.get('/search', controller.search)
+
 module.exports = rotas;
