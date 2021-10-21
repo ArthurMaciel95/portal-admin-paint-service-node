@@ -8,40 +8,64 @@ const bcryptjs = require("bcryptjs");
 
 module.exports = async (req, res) => {
     try {
+
         /**
-         * Faz a validação dos atributos enviados pela requisição.
-         *
+         * Verifica se a requisição tem token
+         * 
          */
-        toCompare.keys(["username", "email", "password"], req.body, true);
+        jwt.getToken(req)
+
+        /**
+         * Pega somente o token Basic.
+         * @returns { string }
+         */
+        const token = req.headers['authorization'].replace('Basic ', '').trim()
+
+        /**
+         * transforma base64 para utf8.
+         * 
+         */
+        const decoded = new Buffer.from(token, 'base64').toString('utf8');
+
+        /**
+         * Separa a senha do email.
+         * 
+         */
+        const [email, password] = decoded.split(':')
 
         /**
          * Valida se os atributos então preenchidos corretamente.
          *
          */
-        value.attributeIsNull(req.body);
+        if (value.isNull(email) || value.isNull(password))
+            throw { message: 'email or password cannot be null' }
 
         /**
          * Verifica se o Email tem um formato padrão.
          *
          */
-        attributes.isEmail(req.body.email);
+        attributes.isEmail(email);
 
-        if (!isNaN(req.body.password))
-            throw { message: "password need to be string" };
+        /**
+         * Transforma a senha em String
+         * 
+         */
+        if (!isNaN(password))
+            password.toString()
 
         /**
          * Faz a busca no bando de dados pelo usuario.
          *  Verifica se o usuario existe.
          * 
          */
-        const user = await User.findOne({ email: req.body.email });
+        const user = await User.findOne({ email });
         if (!user) throw { message: "user not found" };
 
         /**
          * Faz a comparação entre as senhas passadas.
          *
          */
-        if (!(await bcryptjs.compare(req.body.password, user.password)))
+        if (!(await bcryptjs.compare(password, user.password)))
             throw { message: "email or password is not correct" };
 
         /**

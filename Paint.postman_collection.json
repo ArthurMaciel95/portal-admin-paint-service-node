@@ -25,7 +25,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\" : \"Arthur Nogueira\",\r\n    \"email\" : \"arthunmrocha@gmail.com\",\r\n    \"cpf\" : \"123456789\",\r\n    \"payment_method\" : \"credit\",\r\n    \"birth_date\" : \"23/09/1995\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"aoaodifapsdifap\",\r\n        \"city\" : \"Alfenas\"\r\n    }\r\n    \"company\":\"arthur desenvolvedor web\"\r\n}",
+							"raw": "{\r\n    \"username\" : \"Arthur\",\r\n    \"email\" : \"arthurnmrocha1123@gmail.com\",\r\n    \"cpf\" : \"15931601789\",\r\n    \"status\":\"pending\",\r\n    \"payment_method\" : \"money\",\r\n    \"birth_date\" : \"2021-10-14T18:17:02.121Z\",\r\n    \"address\" : {\r\n        \"cep\" : \"371303400\",\r\n        \"district\" : \"JD Alv\",\r\n        \"additional_infomation\" : \"aoaodifapsdifap\",\r\n        \"city\" : \"Alfenas\"\r\n    },\r\n    \"company\":\"arthur desenvolvedor web\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -146,7 +146,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{address}}/client/search?search=arthur",
+							"raw": "{{address}}/client/search?search=ar",
 							"host": [
 								"{{address}}"
 							],
@@ -157,7 +157,7 @@
 							"query": [
 								{
 									"key": "search",
-									"value": "arthur"
+									"value": "ar"
 								}
 							]
 						}
@@ -246,6 +246,16 @@
 				{
 					"name": "List One",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -292,7 +302,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\n      \"username\":\"jubileidoagreste\",\n      \"email\":\"picademel@gmail.com\",\n      \"password\":\"tiacreuza123\"\n    }",
+							"raw": " {\n      \"username\":\"arthur\",\n      \"email\":\"arthurnmrocha@gmail.com\",\n      \"password\":\"1995131313\"\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -314,12 +324,30 @@
 				},
 				{
 					"name": "Access",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "POST",
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "inserrir_senha",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "inserir_email",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": " {\r\n      \"username\":\"jubileidoagreste\",\r\n      \"email\":\"picademel@gmail.com\",\r\n      \"password\":\"tiacreuza123\"\r\n    }",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"

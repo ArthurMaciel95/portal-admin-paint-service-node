@@ -7,11 +7,13 @@ const jwt = require("jsonwebtoken");
  * @param {*} req Corpo da requisição Express
  * @returns Token ou Throw
  */
-function getToken(req) {
+exports.getToken = (req) => {
     if (req.headers["x-access-token"]) {
         return req.headers["x-access-token"];
-    } else if (req.headers["authorization"]) {
+    } else if (req.headers["authorization"].includes('Bearer')) {
         return req.headers["authorization"].toString().replace("Bearer ", "").trim();
+    } else if (req.headers['authorization'].includes('Basic')) {
+        return req.headers['authorization'].replace('Basic ', '').trim();
     } else {
         throw {
             code: 401,
