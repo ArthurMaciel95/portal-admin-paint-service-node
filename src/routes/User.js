@@ -10,7 +10,7 @@ const controller = require('../controllers/User')
 
 // Rota para criar um novo produto
 rotas.post("/register", controller.register);
-rotas.post('/access', controller.login)
+rotas.get('/access', controller.login)
 
 
 
