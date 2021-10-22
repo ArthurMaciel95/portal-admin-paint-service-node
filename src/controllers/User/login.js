@@ -83,9 +83,7 @@ module.exports = async (req, res) => {
          */
         res.status(200).json({
             status: true,
-            message: "logged with success",
-            token: jwt.create(user.toJSON()).toString(),
-            info_user: data
+            token: jwt.create(data).toString(),
         });
     } catch (erro) {
         console.log(erro)
