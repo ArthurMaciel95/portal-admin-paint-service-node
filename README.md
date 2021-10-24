@@ -1,7 +1,5 @@
 # portal-admin-paint-service-node
 
-
-<<<<<<< HEAD
 ### BACKLOG
 
   estrutura CLIENTE:
@@ -142,7 +140,7 @@
   
   
   
-=======
+
 > npm install
 > npm start ou npm run dev
->>>>>>> development
+
