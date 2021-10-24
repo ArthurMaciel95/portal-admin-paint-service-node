@@ -31,7 +31,7 @@ exports.getToken = (req) => {
  */
 exports.verify = (req, res, next) => {
     try {
-        req.headers["user"] = this.decoded(getToken(req));
+        req.headers["user"] = this.decoded(this.getToken(req));
         next();
     } catch (e) {
         sendError(res, e);
