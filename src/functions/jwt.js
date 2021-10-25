@@ -30,6 +30,7 @@ exports.getToken = (req) => {
  * @returns retorna os dados do token
  */
 exports.verify = (req, res, next) => {
+
     try {
         req.headers["user"] = this.decoded(this.getToken(req));
         next();
