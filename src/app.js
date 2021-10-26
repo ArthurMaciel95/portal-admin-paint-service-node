@@ -39,6 +39,14 @@ app.use(express.urlencoded({ extended: true }));
  * Rotas raiz (root)
  *
  */
+
+app.get('/', (req, res) => {
+    res.json({
+        status: true,
+        message: 'working'
+    })
+})
+
 app.use("/client", jwt.verify, rotas.Client);
 app.use("/product", jwt.verify, rotas.Product);
 app.use("/user", rotas.User);

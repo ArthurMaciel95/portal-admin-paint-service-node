@@ -4,8 +4,8 @@
   "description": "API de gerenciamento de informações para o portal Paint",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/server.js",
-    "dev": "nodemon ./bin/server.js"
+    "start": "node ./bin/server",
+    "dev": "nodemon ./bin/server"
   },
   "repository": {
     "type": "git",
