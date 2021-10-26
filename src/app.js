@@ -32,7 +32,7 @@ app.use(function (req, res, next) {
 // adicionei cors por que no front so funciona assim, depois resolvo o problema e tiro.
 app.use(cors())
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true, limit: '5mb' }));
 
 /**
  * Define as rotas para toda a aplicação
@@ -41,9 +41,8 @@ app.use(express.urlencoded({ extended: true }));
  */
 
 app.get('/', (req, res) => {
-    res.json({
-        status: true,
-        message: 'working'
+    res.status(200).json({
+        status: true
     })
 })
 
