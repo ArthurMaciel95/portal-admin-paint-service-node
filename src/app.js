@@ -31,8 +31,8 @@ app.use(function (req, res, next) {
 });
 // adicionei cors por que no front so funciona assim, depois resolvo o problema e tiro.
 app.use(cors())
-app.use(express.json());
-app.use(express.urlencoded({ extended: true, limit: '5mb' }));
+app.use(express.json({ limit: '5mb', parameterLimit: 100000, extended: true }));
+app.use(express.urlencoded({ extended: true, limit: '5mb', parameterLimit: 100000, }));
 
 /**
  * Define as rotas para toda a aplicação

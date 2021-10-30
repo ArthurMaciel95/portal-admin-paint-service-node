@@ -30,6 +30,7 @@ const Client = new mongoose.Schema(
         company: String,
         photo: {
             type: Buffer,
+            required: false,
         },
         address: {
             cep: Number,

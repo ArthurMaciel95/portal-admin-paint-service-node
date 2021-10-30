@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
             req.body.address,
             true // trava de segurança ativada
         );
-        
+
         /**
          * Faz a verificação se há algum parametro vazio.
          * 
@@ -59,14 +59,14 @@ module.exports = async (req, res) => {
          * Se tiver retornar um erro. mas se não, cria um novo cliente.
          *
          */
-        const foc = await Client.findOne({$or: [{ cpf: req.body.cpf }, { email: req.body.email }]})
+        const foc = await Client.findOne({ $or: [{ cpf: req.body.cpf }, { email: req.body.email }] })
         if (!value.isNull(foc)) {
             if (foc.email === req.body.email)
                 throw { message: "Email already registered" };
             if (foc.password === req.body.password)
-                throw {message:"Registration of a physical person (CPF) already registered"};
+                throw { message: "Registration of a physical person (CPF) already registered" };
         }
-        
+
         /**
          * Cria um novo usuario com base nas informaçoes passadas.
          * E retornar para a requição as informaçoes.
@@ -75,12 +75,7 @@ module.exports = async (req, res) => {
         const client = await Client.create(req.body);
         res.status(200).json({
             status: true,
-            message: "Successful registered customer",
-            client: {
-                _id: client._id,
-                email: client.email,
-                name: client.name,
-            },
+            message: "Successful registered customer"
         });
     } catch (erro) {
         sendError(res, erro);

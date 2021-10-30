@@ -4,9 +4,10 @@ const { sendError } = require('../../functions')
 
 module.exports = async (req, res) => {
     try {
-        await Document.distinct({ "tags.name": req.body.tags },)
-
         const { id } = req.params;
+        if (!id) {
+            throw { message: ' params not found' }
+        }
         if (!value.isNull(id)) {
             const client = await Client.findOne({ _id: id });
             if (value.isNull(client)) throw { message: "Client not found" }
