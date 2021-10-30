@@ -21,5 +21,6 @@ rotas.get("/list", controller.list_all);
 rotas.put("/update/:id", controller.update)
 
 rotas.get('/search', controller.search)
+rotas.delete('/delete/:id', controller.delete)
 
 module.exports = rotas;

@@ -3,5 +3,6 @@ module.exports = {
     list_one: require("./list_one"),
     list_all: require("./list_all"),
     update: require("./update"),
-    search: require('./search')
+    search: require('./search'),
+    delete: require('./delete')
 };
