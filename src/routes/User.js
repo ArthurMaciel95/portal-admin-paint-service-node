@@ -11,6 +11,9 @@ const controller = require('../controllers/User')
 // Rota para criar um novo produto
 rotas.post("/register", controller.register);
 rotas.get('/access', controller.login)
+rotas.post('/forget-password', controller.forget_password_send)
+rotas.get('/reset/:token', controller.forget_password_verify)
+rotas.put('/reset/password', controller.change_password)
 
 
 

@@ -38,6 +38,14 @@ const Client = new mongoose.Schema(
             additional_infomation: String,
             city: String,
         },
+        products: [
+            {
+                _id: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: "products"
+                }
+            }
+        ]
     },
     {
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" },

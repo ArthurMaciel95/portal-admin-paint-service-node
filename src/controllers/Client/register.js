@@ -72,7 +72,7 @@ module.exports = async (req, res) => {
          * E retornar para a requição as informaçoes.
          *
          */
-        const client = await Client.create(req.body);
+        await Client.create(req.body);
         res.status(200).json({
             status: true,
             message: "Successful registered customer"
