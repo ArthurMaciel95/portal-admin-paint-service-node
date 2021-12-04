@@ -21,16 +21,21 @@ module.exports = async (req, res) => {
          *  
          */
         const Base64Decoded = Buffer.from(Buffer.from(token, 'base64').toString('utf-8'), 'base64').toString('utf-8')
-        console.log(Base64Decoded)
-        const [email] = Base64Decoded.split(':')
 
+        const [email,] = Base64Decoded.split(':')
+
+
+        /**
+         * verifica se é um email
+         * 
+         */
         isEmail(email)
 
         /**
          * encontra o email que está tentando trocar a senha.
          */
         const user = await User.findOne({ email });
-
+        console.log
         if (value.isNull(user)) throw { message: "email not found" }
 
         /** 
