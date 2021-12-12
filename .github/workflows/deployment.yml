@@ -1,4 +1,4 @@
-nome: Deploy
+name: Deploy
 
 on:
   workflow_dispatch:
@@ -22,7 +22,6 @@ jobs:
       node-version: ${{ matrix.node-vesrion }}
     - run: npm ci
     - run: npm run test
-  
   deploy-test:
     needs: test-ci
     if: github.ref == 'refs/heads/development'
@@ -37,7 +36,6 @@ jobs:
         node-version: 16.x
     - run: docker build -t setup-nodejs
     - run: echo "Deploy"
-  
   deploy-production:
     needs: test-ci
     if: github.ref == 'refs/heads/main'
