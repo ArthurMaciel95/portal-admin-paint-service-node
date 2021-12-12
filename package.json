@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./bin/server",
-    "dev": "nodemon ./bin/server"
+    "dev": "nodemon ./bin/server",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArthurMaciel95/portal-admin-paint-service-node.git"
   },
-  "author": "Mateus Nicolau",
+  "author": "Mateus Nicolau & Arthur Rocha",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ArthurMaciel95/portal-admin-paint-service-node/issues"
@@ -35,6 +36,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "jest": "^27.4.3",
     "nodemon": "^2.0.13"
   }
 }
